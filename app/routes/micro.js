@@ -4,6 +4,7 @@ module.exports = app => {
     var router = require("express").Router();
     
     router.get("/", ref.findAll);
+    router.post("/create", ref.validate('createRef'), ref.create);
   
     app.use('/api/ref', router);
   };

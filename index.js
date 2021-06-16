@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const bodyParser = require('body-parser');
+
 const db = require("./app/models");
 
 const app = express();
@@ -10,7 +12,10 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.use(bodyParser.json())
 app.use(express.json());
+
+
 
 app.use(express.urlencoded({
     extended: true
